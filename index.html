@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Aanya & Rohan's Wedding</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons (for schedule section) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="icon" href="./img/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ============================================
+     UNIT 4: NAVIGATION BAR (REQUIRED)
+     - Uses flexbox for layout
+     - Has 2+ pseudo-classes (:hover, :active)
+     - Links navigate to 6 different sections
+     ============================================ -->
+<nav class="navbar">
+  <ul class="nav-menu">
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#our-story" class="nav-link">Our Story</a></li>
+    <li><a href="#schedule" class="nav-link">Schedule</a></li>
+    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+    <li><a href="#guestbook" class="nav-link">Guestbook</a></li>
+    <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+    <!-- UNIT 5: Dark Mode Toggle Button -->
+    <li><button id="theme-button" class="theme-toggle">🌙 Dark Mode</button></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================
+     HOME SECTION (Hero/Welcome)
+     ============================================ -->
+<section id="home">
+  <div class="hero-container">
+    <img id="header-img" src="./img/bonefire.png"/>
+    <h1>Welcome to Our Wedding</h1>
+    <p class="hero-subtitle">Aanya & Rohan</p>
+    <p class="hero-date">February 14-17, 2027 • New York</p>
+    
+    <!-- Navigation buttons -->
+    <div class="button-container">
+      <button class="btn btn-primary" onclick="document.getElementById('rsvp').scrollIntoView({behavior: 'smooth'})">RSVP Now</button>
+      <button class="btn btn-secondary" onclick="document.getElementById('schedule').scrollIntoView({behavior: 'smooth'})">View Schedule</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     OUR STORY SECTION
+     ============================================ -->
+<section id="our-story">
+  <h2>Our Story</h2>
+  <p class="section-subtitle">How Our Love Story Began</p>
+  
+  <div class="story-container">
+    <div class="story-item">
+      <div class="story-year">2019</div>
+      <h3>We Met</h3>
+      <p>It all started at a coffee shop in New York. Aanya was reading her favorite book, and Rohan couldn't help but strike up a conversation. Little did they know, this chance encounter would change their lives forever.</p>
+    </div>
+    
+    <div class="story-item">
+      <div class="story-year">2022</div>
+      <h3>We Fell in Love</h3>
+      <p>As the years passed, our bond grew stronger. We traveled together, supported each other through challenges, and built countless beautiful memories that would last a lifetime.</p>
+    </div>
+    
+    <div class="story-item">
+      <div class="story-year">2026</div>
+      <h3>The Proposal</h3>
+      <p>Under the stars in Central Park, Rohan got down on one knee. With tears of joy, Aanya said "Yes!" to a lifetime of adventures together.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     UNIT 4 STRETCH: EVENT SCHEDULE (Flexbox Grid)
+     - 2-column layout on desktop
+     - 1-column on mobile
+     - Color-coded cards
+     - Uses Font Awesome icons
+     ============================================ -->
+<section id="schedule">
+  <h2>Event Schedule</h2>
+  <p class="section-subtitle">Four Days of Celebration in New York</p>
+  
+  <!-- Decorative divider -->
+  <div class="schedule-divider"></div>
+
+  <!-- Schedule Container (Flexbox) -->
+  <div class="schedule-container">
+    
+    <!-- Day 1: Haldi -->
+    <div class="schedule-card haldi-card">
+      <h3 class="event-name">Haldi Ceremony</h3>
+      
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-calendar"></i></span>
+        <div><strong>February 14, 2027</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-clock"></i></span>
+        <div><strong>10:00 AM – 12:00 PM</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div><strong>The Plaza Hotel</strong><br>Fifth Avenue, New York</div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-shirt"></i></span>
+        <div><strong>Dress Code</strong><br>Yellow/White Traditional Attire</div>
+      </div>
+
+      <hr class="event-divider">
+      <p class="event-description">A joyous morning ritual with turmeric blessings, celebrating the bride and groom with close family and friends.</p>
+    </div>
+
+    <!-- Day 1: Mehendi -->
+    <div class="schedule-card mehendi-card">
+      <h3 class="event-name">Mehendi Night</h3>
+      
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-calendar"></i></span>
+        <div><strong>February 14, 2027</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-clock"></i></span>
+        <div><strong>6:00 PM – 10:00 PM</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div><strong>The Plaza Hotel</strong><br>Fifth Avenue, New York</div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-shirt"></i></span>
+        <div><strong>Dress Code</strong><br>Green/Pink Traditional Attire</div>
+      </div>
+
+      <hr class="event-divider">
+      <p class="event-description">An evening of intricate henna art, music, dancing, and celebration with family and friends from both sides.</p>
+    </div>
+
+    <!-- Day 2: Sangeet -->
+    <div class="schedule-card sangeet-card">
+      <h3 class="event-name">Sangeet Night</h3>
+      
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-calendar"></i></span>
+        <div><strong>February 15, 2027</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-clock"></i></span>
+        <div><strong>7:00 PM – 11:00 PM</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div><strong>The Plaza Hotel</strong><br>Fifth Avenue, New York</div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-shirt"></i></span>
+        <div><strong>Dress Code</strong><br>Colorful Traditional/Cocktail Attire</div>
+      </div>
+
+      <hr class="event-divider">
+      <p class="event-description">An evening of music and dance where family members perform choreographed songs and dances celebrating the couple.</p>
+    </div>
+
+    <!-- Day 3: Baraat -->
+    <div class="schedule-card baraat-card">
+      <h3 class="event-name">Baraat</h3>
+      
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-calendar"></i></span>
+        <div><strong>February 16, 2027</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-clock"></i></span>
+        <div><strong>10:00 AM – 1:00 PM</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div><strong>The Plaza Hotel</strong><br>Fifth Avenue, New York</div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-shirt"></i></span>
+        <div><strong>Dress Code</strong><br>Formal Traditional Attire</div>
+      </div>
+
+      <hr class="event-divider">
+      <p class="event-description">The groom's grand procession filled with music, dancing, and celebration as he arrives to meet his bride.</p>
+    </div>
+
+    <!-- Day 3: Wedding Ceremony -->
+    <div class="schedule-card wedding-card">
+      <h3 class="event-name">Wedding Ceremony</h3>
+      
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-calendar"></i></span>
+        <div><strong>February 16, 2027</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-clock"></i></span>
+        <div><strong>3:00 PM – 6:00 PM</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div><strong>The Plaza Hotel</strong><br>Fifth Avenue, New York</div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-shirt"></i></span>
+        <div><strong>Dress Code</strong><br>Formal Indian Wedding Attire</div>
+      </div>
+
+      <hr class="event-divider">
+      <p class="event-description">The sacred ritual where the couple exchanges vows, circles the sacred fire (pheras), and officially becomes husband and wife.</p>
+    </div>
+
+    <!-- Day 4: Reception -->
+    <div class="schedule-card reception-card">
+      <h3 class="event-name">Reception</h3>
+      
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-calendar"></i></span>
+        <div><strong>February 17, 2027</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-clock"></i></span>
+        <div><strong>7:00 PM – 11:00 PM</strong></div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <div><strong>The Plaza Hotel</strong><br>Fifth Avenue, New York</div>
+      </div>
+
+      <div class="event-detail">
+        <span class="event-icon"><i class="fas fa-shirt"></i></span>
+        <div><strong>Dress Code</strong><br>Formal Attire / Evening Gown</div>
+      </div>
+
+      <hr class="event-divider">
+      <p class="event-description">An elegant dinner and celebration where guests toast the newlyweds, share stories, and dance late into the night.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     UNIT 4 STRETCH: GALLERY SECTION (Flexbox Grid)
+     - 3-column layout on desktop
+     - 2-column on tablet
+     - 1-column on mobile
+     ============================================ -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <p class="section-subtitle">Pre-Wedding Moments</p>
+  
+   <!-- Gallery Container (Flexbox) -->
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="./img/mehendi.png" alt="Mehendi ceremony" class="gallery-image">
+      <p>Mehendi Night</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./img/haldi ceremony.png" alt="Haldi ceremony" class="gallery-image">
+      <p>Haldi Ceremony</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./img/placeholder.png" alt="Engagement shoot" class="gallery-image">
+      <p>Engagement Shoot</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./img/placeholder.png" alt="Pre-wedding" class="gallery-image">
+      <p>Pre-Wedding Shoot</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./img/placeholder.png" alt="Couple moment" class="gallery-image">
+      <p>Couple Moments</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./img/placeholder.png" alt="Family photos" class="gallery-image">
+      <p>Family Moments</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     GUESTBOOK SECTION
+     ============================================ -->
+<section id="guestbook">
+  <h2>Guestbook</h2>
+  <p class="guestbook-subtitle">Leave your blessings, memories, and wishes for the happy couple</p>
+
+  <!-- Add Blessing Form -->
+  <div class="blessing-form-container">
+    <div class="blessing-form">
+      <h3>Add your blessing</h3>
+      
+      <input type="text" placeholder="Your name" class="form-input">
+      <input type="text" placeholder="Your relation" class="form-input">
+      <textarea placeholder="Write a message..." class="form-textarea"></textarea>
+
+      <!-- Category Selection -->
+      <div class="category-selection">
+        <label>Mark as:</label>
+        <div class="category-buttons">
+          <button class="category-btn" data-category="blessing">Blessing</button>
+          <button class="category-btn" data-category="memory">Memory</button>
+          <button class="category-btn" data-category="wish">Wish</button>
+        </div>
+      </div>
+
+      <button class="btn-send">Send with love</button>
+    </div>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="filter-btn active">All 45</button>
+    <button class="filter-btn">Blessing</button>
+    <button class="filter-btn">Memory</button>
+    <button class="filter-btn">Wish</button>
+  </div>
+
+  <!-- Messages Display -->
+  <div class="messages-container">
+    <!-- Sample Message 1 (Blessing - Pink) -->
+    <div class="message-card blessing-card">
+      <div class="message-header">
+        <div class="avatar blessing-avatar">PS</div>
+        <div class="message-info">
+          <h4>Priya Sharma</h4>
+          <p class="meta">Bride's Friend • 2hrs ago</p>
+        </div>
+        <span class="category-badge blessing-badge">Blessing</span>
+      </div>
+      <p class="message-text">May your marriage be filled with endless love, laughter, and adventure. So happy for you both!!</p>
+    </div>
+
+    <!-- Sample Message 2 (Memory - Blue) -->
+    <div class="message-card memory-card">
+      <div class="message-header">
+        <div class="avatar memory-avatar">RK</div>
+        <div class="message-info">
+          <h4>Raj Kapoor</h4>
+          <p class="meta">Family Friend • 1hr ago</p>
+        </div>
+        <span class="category-badge memory-badge">Memory</span>
+      </div>
+      <p class="message-text">Remember when Rohan was 5 and said he'd marry a princess? He kept his promise!</p>
+    </div>
+
+    <!-- Sample Message 3 (Wish - Green) -->
+    <div class="message-card wish-card">
+      <div class="message-header">
+        <div class="avatar wish-avatar">SM</div>
+        <div class="message-info">
+          <h4>Sarah Mitchell</h4>
+          <p class="meta">College Friend • 3hrs ago</p>
+        </div>
+        <span class="category-badge wish-badge">Wish</span>
+      </div>
+      <p class="message-text">Wishing you both a lifetime of love. Can't wait to dance at your Sangeet!</p>
+    </div>
+  </div>
+
+  <!-- Load More Button -->
+  <div class="load-more">
+    <button class="btn-load-more">Load more blessings</button>
+  </div>
+</section>
+
+
+<!-- ============================================
+     UNIT 6 & 7: RSVP SECTION
+     - UNIT 6: RSVP form with 3+ input fields
+     - UNIT 7: Form validation (min 2 chars, email @)
+     ============================================ -->
+<section id="rsvp">
+  <h2>RSVP</h2>
+  <p class="section-subtitle">Let us know you're coming!</p>
+  
+  <!-- RSVP Container (Flexbox Layout) -->
+  <div class="rsvp-container">
+    
+    <!-- Left: Description Paragraph -->
+    <div class="rsvp-para">
+      <p>We would be honored to have you celebrate with us! Please complete the form below to confirm your attendance. We need your response by January 15, 2027.</p>
+    </div>
+
+    <!-- Right: Participants List -->
+    <div class="rsvp-participants">
+      <h3>Who's Joining Us</h3>
+      <p id="rsvp-count">✨ 3 guests are preparing to celebrate with us!</p>
+      <div id="participants">
+        <!-- Existing participants (will be updated by JavaScript) -->
+        <p>💍 DJ from Texas is joining the crew.</p>
+        <p>💍 Amy from New York is joining the crew.</p>
+        <p>💍 Teresa from Montana is joining the crew.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RSVP Form -->
+  <div class="rsvp-form-container">
+    <form id="rsvp-form" class="rsvp-form">
+      <h3>Register Below</h3>
+      
+      <!-- Input 1: Name (UNIT 6 & 7 Requirement) -->
+      <div class="form-group">
+        <label for="rsvp-name">Name *</label>
+        <input type="text" id="rsvp-name" class="rsvp-input" placeholder="Your full name" required>
+      </div>
+
+      <!-- Input 2: Home State (UNIT 6 & 7 Requirement) -->
+      <div class="form-group">
+        <label for="rsvp-state">Home State *</label>
+        <input type="text" id="rsvp-state" class="rsvp-input" placeholder="Your state" required>
+      </div>
+
+      <!-- Input 3: Email (UNIT 6 & 7 Requirement) -->
+      <div class="form-group">
+        <label for="rsvp-email">Email *</label>
+        <input type="email" id="rsvp-email" class="rsvp-input" placeholder="your@email.com" required>
+      </div>
+
+      <!-- Submit Button (UNIT 6 Requirement) -->
+      <button type="submit" class="btn-rsvp-submit">Submit RSVP</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- ============================================
+     FOOTER (Optional Enhancement)
+     ============================================ -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <h3>Aanya & Rohan</h3>
+      <p>February 14-17, 2027 • New York, USA</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#rsvp">RSVP</a>
+    </div>
+    <div class="footer-social">
+      <p>#AanyaWedsRohan</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2027 Aanya & Rohan. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- UNIT 9: SUCCESS MODAL -->
+<div id="success-modal" class="modal">
+  <div class="modal-container">
+    <div id="modal-text">
+      <p>Thank you for RSVPing!</p>
+    </div>
+    <div id="modal-image">
+      <img src="./img/favicon.png" alt="Success" class="modal-img">
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

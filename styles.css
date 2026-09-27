@@ -1,0 +1,1328 @@
+/* Add CSS styles for your web site here and use them in index.html. */
+/* ============================================
+   WEDDING WEBSITE STYLESHEET
+   Organized by Unit & Feature
+   ============================================ */
+
+
+/* ============================================
+   SECTION 1: GLOBAL STYLES & VARIABLES
+   ============================================ */
+
+/* CSS Variables for easy color customization */
+:root {
+  --bg-color: #FAF6EE;
+  --text-color: #7B1E2E;
+  --accent-color: #C9A961;
+  --light-text: #5F5E5A;
+  --border-color: #E8D5A7;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply to entire page */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* All sections have scroll offset for sticky navbar */
+section {
+  scroll-margin-top: 80px;
+  padding: 3rem 2rem;
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 18px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+
+/* ============================================
+   SECTION 2: UNIT 4 - NAVIGATION BAR
+   Required: Flexbox, 2+ pseudo-classes, links
+   ============================================ */
+
+.navbar {
+  background-color: var(--text-color);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Menu with Flexbox */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 1rem 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Navigation Links with Pseudo-Classes */
+.nav-link {
+  color: #FAF6EE;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s ease;
+  display: block;
+}
+
+/* Pseudo-class: Hover (REQUIRED) */
+.nav-link:hover {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Pseudo-class: Active (REQUIRED) */
+.nav-link:active {
+  color: #E8D5A7;
+}
+
+/* Pseudo-class: Focus (Accessibility) */
+.nav-link:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Mobile Responsive Navbar */
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+
+/* ============================================
+   SECTION 3: UNIT 5 - DARK MODE
+   Required: Toggle button, dark styling
+   ============================================ */
+
+/* Theme Toggle Button */
+#theme-button {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+#theme-button:hover {
+  background-color: #B8956A;
+  transform: scale(1.05);
+}
+
+/* Dark Mode Color Scheme */
+.dark-mode {
+  --bg-color: #1A1A1A;
+  --text-color: #F5DEB3;
+  --accent-color: #D4A574;
+  --light-text: #CCCCCC;
+  --border-color: #4A4A4A;
+}
+
+.dark-mode body {
+  background-color: #1A1A1A;
+  color: #F5DEB3;
+}
+
+.dark-mode .navbar {
+  background-color: #2A2A2A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .nav-link {
+  color: #F5DEB3;
+}
+
+.dark-mode .nav-link:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.dark-mode section {
+  background-color: #1A1A1A;
+}
+
+.dark-mode h2, .dark-mode h3 {
+  color: var(--accent-color);
+}
+
+.dark-mode p {
+  color: #CCCCCC;
+}
+
+/* Dark Mode - Schedule Cards */
+.dark-mode .schedule-card {
+  background-color: #2A2A2A;
+}
+
+.dark-mode .event-detail div {
+  color: #CCCCCC;
+}
+
+/* Dark Mode - Gallery */
+.dark-mode .gallery-item {
+  background-color: #2A2A2A;
+}
+
+.dark-mode .gallery-item p {
+  background-color: #3A3A3A;
+  color: #F5DEB3;
+}
+
+/* Dark Mode - Buttons */
+.dark-mode button,
+.dark-mode .btn-send,
+.dark-mode .btn-rsvp-submit {
+  background-color: #4A4A4A;
+  color: #F5DEB3;
+}
+
+/* Dark Mode - Forms */
+.dark-mode .blessing-form,
+.dark-mode .rsvp-form {
+  background-color: #2A2A2A;
+  border-color: #4A4A4A;
+}
+
+.dark-mode .form-input,
+.dark-mode .rsvp-input {
+  background-color: #3A3A3A;
+  color: #F5DEB3;
+  border-color: #4A4A4A;
+}
+
+/* Dark Mode - Messages */
+.dark-mode .message-card {
+  background-color: #2A2A2A;
+}
+
+/* Dark Mode - Footer */
+.dark-mode .footer {
+  background-color: #2A2A2A;
+  border-top: 1px solid #4A4A4A;
+}
+
+/* Dark Mode - Theme Button */
+.dark-mode #theme-button {
+  background-color: #5A5A5A;
+  color: #F5DEB3;
+}
+
+
+/* ============================================
+   SECTION 4: HOME SECTION (Hero)
+   ============================================ */
+
+#home {
+  background: linear-gradient(135deg, var(--bg-color) 0%, #F5EDD8 100%);
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  max-width: 800px;
+}
+
+#home h1 {
+  font-size: 64px;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 36px;
+  color: var(--accent-color);
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.hero-date {
+  font-size: 18px;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+
+/* ============================================
+   SECTION 5: BUTTONS (Home Section)
+   ============================================ */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--text-color);
+  color: #FAF6EE;
+}
+
+.btn-primary:hover {
+  background-color: #5F1622;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background-color: #B8956A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(123, 30, 46, 0.2);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+
+/* ============================================
+   SECTION 6: OUR STORY SECTION
+   ============================================ */
+
+#our-story {
+  background-color: #FFFFFF;
+}
+
+.story-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.story-item {
+  background-color: #F5EDD8;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.story-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.story-year {
+  font-size: 28px;
+  color: var(--accent-color);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.story-item h3 {
+  color: var(--text-color);
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.story-item p {
+  color: var(--light-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ============================================
+   SECTION 7: UNIT 4 - SCHEDULE (Flexbox Grid)
+   Required: 2-column desktop, 1-column mobile
+   ============================================ */
+
+#schedule {
+  background-color: var(--bg-color);
+}
+
+/* Decorative Divider */
+.schedule-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent-color), var(--accent-color), var(--accent-color), transparent);
+  margin: 1.5rem auto 3rem;
+  position: relative;
+}
+
+.schedule-divider::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Schedule Container - FLEXBOX (2 columns) */
+.schedule-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Schedule Card */
+.schedule-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  border-left: 6px solid;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  position: relative;
+  
+  flex: 1 1 calc(50% - 1rem);
+  min-width: 320px;
+  max-width: 420px;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Color Variants */
+.haldi-card { border-left-color: #E89A3C; }
+.mehendi-card { border-left-color: #1F5F4A; }
+.sangeet-card { border-left-color: #D4537E; }
+.baraat-card { border-left-color: #993C1D; }
+.wedding-card { border-left-color: var(--text-color); }
+.reception-card { border-left-color: #534AB7; }
+
+/* Event Name */
+.event-name {
+  margin: 0 0 1.5rem 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.haldi-card .event-name { color: #E89A3C; }
+.mehendi-card .event-name { color: #1F5F4A; }
+.sangeet-card .event-name { color: #D4537E; }
+.baraat-card .event-name { color: #993C1D; }
+.wedding-card .event-name { color: var(--text-color); }
+.reception-card .event-name { color: #534AB7; }
+
+/* Event Details */
+.event-detail {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.event-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.haldi-card .event-icon { color: #E89A3C; }
+.mehendi-card .event-icon { color: #1F5F4A; }
+.sangeet-card .event-icon { color: #D4537E; }
+.baraat-card .event-icon { color: #993C1D; }
+.wedding-card .event-icon { color: var(--text-color); }
+.reception-card .event-icon { color: #534AB7; }
+
+.event-detail div {
+  font-size: 14px;
+  color: #1A1A1A;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.event-detail strong {
+  display: block;
+  color: #1A1A1A;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+/* Event Divider */
+.event-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+/* Event Description */
+.event-description {
+  margin: 0;
+  margin-top: auto;
+  font-size: 14px;
+  color: var(--light-text);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* Tablet - Still 2 columns */
+@media screen and (max-width: 1024px) {
+  .schedule-card {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 300px;
+  }
+}
+
+/* Mobile - 1 column */
+@media screen and (max-width: 768px) {
+  #schedule {
+    padding: 2rem 1rem;
+  }
+
+  #schedule h2 {
+    font-size: 36px;
+  }
+
+  .schedule-container {
+    gap: 1.5rem;
+  }
+
+  .schedule-card {
+    flex: 1 1 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .event-name {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .event-icon {
+    font-size: 18px;
+  }
+
+  .event-detail div {
+    font-size: 13px;
+  }
+
+  .event-description {
+    font-size: 13px;
+  }
+}
+
+
+/* ============================================
+   SECTION 8: GALLERY (Flexbox Grid)
+   Stretch: 3 columns desktop, 2 tablet, 1 mobile
+   ============================================ */
+
+#gallery {
+  background-color: #FFFFFF;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.gallery-item {
+  flex: 0 1 calc(33.333% - 1rem);
+  min-width: 200px;
+  max-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  background-color: #FFFFFF;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item p {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 500;
+  margin: 0;
+  background-color: #F5EDD8;
+}
+
+/* Tablet - 2 columns */
+@media screen and (max-width: 1024px) {
+  .gallery-item {
+    flex: 0 1 calc(50% - 0.5rem);
+    min-width: 150px;
+  }
+}
+
+/* Mobile - 1 column */
+@media screen and (max-width: 768px) {
+  #gallery {
+    padding: 2rem 1rem;
+  }
+
+  .gallery-item {
+    flex: 0 1 100%;
+    min-width: 100%;
+  }
+
+  .gallery-image {
+    height: 180px;
+  }
+}
+
+
+/* ============================================
+   SECTION 9: GUESTBOOK SECTION
+   ============================================ */
+
+#guestbook {
+  padding: 3rem 2rem;
+  background-color: var(--bg-color);
+}
+
+#guestbook h2 {
+  font-size: 36px;
+}
+
+.guestbook-subtitle {
+  text-align: center;
+  color: #888780;
+  font-size: 16px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Form Container */
+.blessing-form-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.blessing-form {
+  background-color: #FFFFFF;
+  border: 2px solid var(--accent-color);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blessing-form h3 {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Form Inputs */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #FAF6EE;
+  color: var(--light-text);
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  transition: 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #B8956A;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--text-color);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(123, 30, 46, 0.1);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Category Selection */
+.category-selection {
+  margin-bottom: 16px;
+}
+
+.category-selection label {
+  display: block;
+  font-size: 13px;
+  color: var(--light-text);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 6px 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #D4C4A0;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--light-text);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.category-btn:hover {
+  background-color: #F5EDD8;
+  border-color: var(--accent-color);
+}
+
+.category-btn.active {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  border-color: var(--accent-color);
+}
+
+/* Send Button */
+.btn-send {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--text-color);
+  color: #FAF6EE;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-send:hover {
+  background-color: #5F1622;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(123, 30, 46, 0.3);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background-color: #E8E8E8;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--light-text);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background-color: #D4D4D4;
+}
+
+.filter-btn.active {
+  background-color: var(--text-color);
+  color: #FAF6EE;
+}
+
+/* Messages Container */
+.messages-container {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.message-card {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 4px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.message-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Message Card Colors */
+.blessing-card {
+  border-left-color: #D4537E;
+  background-color: #FBE8F0;
+}
+
+.memory-card {
+  border-left-color: #2B7FD6;
+  background-color: #E8F1FC;
+}
+
+.wish-card {
+  border-left-color: #639922;
+  background-color: #EEF5E0;
+}
+
+/* Message Header */
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.blessing-avatar { background-color: #D4537E; }
+.memory-avatar { background-color: #2B7FD6; }
+.wish-avatar { background-color: #639922; }
+
+.message-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-info h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.message-info .meta {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #888780;
+}
+
+/* Category Badge */
+.category-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.blessing-badge {
+  background-color: #FBEAF0;
+  color: #D4537E;
+}
+
+.memory-badge {
+  background-color: #E8F1FC;
+  color: #2B7FD6;
+}
+
+.wish-badge {
+  background-color: #EEF5E0;
+  color: #639922;
+}
+
+/* Message Text */
+.message-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #1A1A1A;
+}
+
+/* Load More Button */
+.load-more {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.btn-load-more {
+  padding: 10px 24px;
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-load-more:hover {
+  background-color: #F5EDD8;
+  border-color: var(--text-color);
+}
+
+/* Mobile Responsive Guestbook */
+@media screen and (max-width: 768px) {
+  #guestbook {
+    padding: 2rem 1rem;
+  }
+
+  #guestbook h2 {
+    font-size: 28px;
+  }
+
+  .blessing-form {
+    padding: 1.5rem;
+  }
+
+  .message-card {
+    padding: 12px;
+  }
+}
+
+
+/* ============================================
+   SECTION 10: UNIT 6 & 7 - RSVP SECTION
+   Unit 6: Form with 3+ fields, add participants
+   Unit 7: Validation (min 2 chars, error styling)
+   ============================================ */
+
+#rsvp {
+  background-color: #FFFFFF;
+}
+
+/* RSVP Container - Flexbox (Left/Right Layout) */
+.rsvp-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Left: Description Paragraph */
+.rsvp-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.rsvp-para p {
+  font-size: 16px;
+  color: var(--light-text);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Right: Participants List */
+.rsvp-participants {
+  width: 45%;
+  padding-left: 10px;
+}
+
+.rsvp-participants h3 {
+  color: var(--text-color);
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* RSVP Count Display */
+#rsvp-count {
+  font-size: 14px;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Participants List */
+#participants {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#participants p {
+  font-size: 14px;
+  color: var(--light-text);
+  margin: 0;
+  padding: 8px;
+  background-color: #F5EDD8;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-color);
+}
+
+/* RSVP Form Container */
+.rsvp-form-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.rsvp-form {
+  background-color: #F5EDD8;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.rsvp-form h3 {
+  color: var(--text-color);
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* RSVP Inputs (UNIT 6: 3+ fields) */
+.rsvp-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #FFFFFF;
+  color: var(--light-text);
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+.rsvp-input::placeholder {
+  color: #B8956A;
+}
+
+.rsvp-input:focus {
+  outline: none;
+  border-color: var(--text-color);
+  box-shadow: 0 0 0 3px rgba(123, 30, 46, 0.1);
+}
+
+/* UNIT 7: Error State Styling (Required) */
+.rsvp-input.error {
+  border-color: #E74C3C;
+  background-color: #FADBD8;
+}
+
+.rsvp-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+/* RSVP Submit Button (UNIT 6: Required) */
+.btn-rsvp-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--text-color);
+  color: #FAF6EE;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-rsvp-submit:hover {
+  background-color: #5F1622;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(123, 30, 46, 0.3);
+}
+
+.btn-rsvp-submit:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive RSVP */
+@media screen and (max-width: 768px) {
+  #rsvp {
+    padding: 2rem 1rem;
+  }
+
+  .rsvp-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .rsvp-para {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .rsvp-participants {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .rsvp-form {
+    padding: 1.5rem;
+  }
+}
+
+
+/* ============================================
+   SECTION 11: FOOTER (Optional Enhancement)
+   ============================================ */
+
+.footer {
+  background-color: var(--text-color);
+  color: #FAF6EE;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+/* Footer Container - Flexbox */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-content,
+.footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  color: var(--accent-color);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  margin-top: 0;
+  letter-spacing: 2px;
+}
+
+.footer-content p,
+.footer-social p {
+  font-size: 14px;
+  color: #D4C4A0;
+  margin: 0.5rem 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #E8D5A7;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--accent-color);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 12px;
+  color: #D4C4A0;
+}
+
+/* Mobile Responsive Footer */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-content,
+  .footer-links,
+  .footer-social {
+    min-width: 100%;
+  }
+}
+/* UNIT 9: SUCCESS MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-container {
+  padding: 50px;
+  width: 55%;
+  background-color: #E8D5A7;
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.modal-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Dark Mode */
+.dark-mode .modal {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .modal-container {
+  background-color: #3a3a3a;
+  color: #F5DEB3;
+}
